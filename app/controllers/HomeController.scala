@@ -7,7 +7,21 @@ import play.api.mvc._
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+    Ok(views.html.index("Hello Taiwo"))
   }
+
+  //  def index(name: String) = Action {
+  //    Ok("Hello " + name)
+  //  }
+
+  def help() = Action {
+    Redirect("http://google.com")
+  }
+
+  def infinite() = Action {
+    Redirect(routes.HomeController.index())
+  }
+
+  def Help() = TODO
 
 }
